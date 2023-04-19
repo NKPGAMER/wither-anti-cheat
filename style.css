@@ -1,0 +1,82 @@
+.switch-container {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+
+.switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.switch::before {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 20px;
+  background-color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.switch::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: 20px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.switch:checked {
+  border-color: #007bff;
+}
+
+.switch:checked::before {
+  transform: translateX(20px);
+  background-color: #007bff;
+}
+
+.switch:checked::after {
+  transform: translateX(-20px);
+  background-color: #007bff;
+}
+
+#notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 9999;
+}
+
+#notification #message {
+  font-size: 15px;
+}
+
+#notification #close {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  left: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
